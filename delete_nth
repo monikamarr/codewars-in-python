@@ -1,0 +1,19 @@
+def delete_nth(order,max_e):
+    count = 1
+    hmap = {}
+    for i in order:
+        if i in hmap:
+            count += 1
+            hmap[i] = count
+        else:
+            hmap[i] = 1
+    new = []
+    for num in order:
+        if hmap[num] > max_e:
+            hmap[num] = max_e
+            
+    for i in order:
+        if hmap[i] > 0:
+            new.append(i)
+            hmap[i] -= 1
+    return new
