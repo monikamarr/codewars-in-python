@@ -1,10 +1,8 @@
 def delete_nth(order,max_e):
-    count = 1
     hmap = {}
     for i in order:
         if i in hmap:
-            count += 1
-            hmap[i] = count
+            hmap[i] += 1
         else:
             hmap[i] = 1
     new = []
